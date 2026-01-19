@@ -42,7 +42,7 @@ const Home = () => {
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
-                                    <Link to="/builder" className="px-8 py-4 bg-gray-900 text-white rounded-xl font-bold text-lg hover:shadow-xl hover:bg-black transition-all transform hover:-translate-y-1 flex items-center gap-2 w-full sm:w-auto justify-center">
+                                    <Link to="/builder" className="px-8 py-4 btn-primary text-white rounded-xl font-bold text-lg hover:shadow-xl hover:bg-black transition-all transform hover:-translate-y-1 flex items-center gap-2 w-full sm:w-auto justify-center">
                                         <Wand2 size={20} />
                                         <span>Create My Resume</span>
                                     </Link>
