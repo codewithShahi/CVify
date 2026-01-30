@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin, Heart } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+        <footer className="bg-gray-900 text-white pt-16 pb-4 border-t border-gray-800">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     <div className="col-span-1">
@@ -14,9 +14,10 @@ const Footer = () => {
                             <span className="text-2xl font-bold">CVify</span>
                         </Link>
                         <p className="text-gray-400 mb-6">
-                            Create professional resumes in minutes with our AI-powered builder.
+                            Create professional resumes in minutes with our
+                            <br />AI-powered builder CVify.
                         </p>
-                        <div className="flex gap-4">
+                        {/* <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors">
                                 <Twitter size={18} />
                             </a>
@@ -26,7 +27,7 @@ const Footer = () => {
                             <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors">
                                 <Github size={18} />
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div>
@@ -50,10 +51,23 @@ const Footer = () => {
                     <p className="text-gray-500 text-sm">
                         © 2026 CVify. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                        <span>Make by</span>
-                        <span className="font-bold text-white">Shahzar Ahmad</span>
-                        <Heart size={14} className="text-red-500 fill-red-500" />
+
+                    <div className="flex flex-col items-center md:items-end gap-1">
+                        <div className="flex items-center gap-2 text-sm text-gray-400">
+                            <span>Made with</span>
+                            <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" />
+                            <span>by</span>
+                            <span className="font-bold text-white tracking-wide">Shahzar Ahmad</span>
+                        </div>
+
+                        {/* Email Link Added Here */}
+                        <a
+                            href="mailto:shahzarahmadlive@gmail.com"
+                            className="text-[11px] text-gray-400  transition-colors cursor-pointer flex items-center gap-1"
+                        >
+                            <span className="opacity-90">Connect:</span>
+                            <span className="font-medium ">shahzarahmadlive@gmail.com</span>
+                        </a>
                     </div>
                 </div>
             </div>
