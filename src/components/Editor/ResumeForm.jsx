@@ -220,21 +220,45 @@ const ResumeForm = () => {
 
             {/* Skills Section */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <button onClick={() => toggleSection('skills')} className="w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group">
-                    <span className="font-bold text-gray-800 group-hover:text-primary-600">Skills</span>
-                    {activeSection === 'skills' ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                <button
+                    onClick={() => toggleSection('skills')}
+                    className="w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group"
+                >
+                    <span className="font-bold text-gray-800 group-hover:text-primary-600 transition-colors">Skills</span>
+                    {activeSection === 'skills' ? <ChevronUp size={20} className="text-gray-500" /> : <ChevronDown size={20} className="text-gray-500" />}
                 </button>
+
                 {activeSection === 'skills' && (
-                    <div className="p-6 space-y-4 border-t border-gray-100">
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <div className="p-6 space-y-6 animate-fade-in border-t border-gray-100">
+                        <div className="space-y-3">
                             {resumeData.skills.map((skill) => (
-                                <div key={skill.id} className="flex items-center gap-2 group">
-                                    <input type="text" value={skill.name} onChange={(e) => updateSkill(skill.id, 'name', e.target.value)} className="flex-grow px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 outline-none" placeholder="Skill Name" />
-                                    <button onClick={() => removeSkill(skill.id)} className="text-gray-400 hover:text-red-500 transition-colors cursor-pointer"><Trash2 size={16} /></button>
+                                <div key={skill.id} className="flex items-center gap-3 group">
+                                    <div className="flex-1">
+                                        <input
+                                            type="text"
+                                            value={skill.name}
+                                            onChange={(e) => updateSkill(skill.id, 'name', e.target.value)}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition-shadow"
+                                            placeholder="Skill name (e.g. React, Leadership)"
+                                        />
+                                    </div>
+                                    <button
+                                        onClick={() => removeSkill(skill.id)}
+                                        className="text-gray-400 hover:text-red-500 p-2 rounded-full hover:bg-red-50 transition-all cursor-pointer flex-shrink-0"
+                                        title="Remove Skill"
+                                    >
+                                        <Trash2 size={20} />
+                                    </button>
                                 </div>
                             ))}
                         </div>
-                        <button onClick={addSkill} className="w-full py-2 border-2 border-dashed border-primary-300 rounded-lg text-primary-600 text-sm font-medium hover:bg-primary-50 flex items-center justify-center gap-2 transition-colors cursor-pointer"><Plus size={16} /> Add Skill</button>
+                        <button
+                            onClick={addSkill}
+                            className="w-full py-3 border-2 border-dashed border-primary-300 rounded-lg text-primary-600 font-medium hover:bg-primary-50 flex items-center justify-center space-x-2 transition-colors cursor-pointer hover:shadow-sm"
+                        >
+                            <Plus size={20} />
+                            <span>Add Skill</span>
+                        </button>
                     </div>
                 )}
             </div>
